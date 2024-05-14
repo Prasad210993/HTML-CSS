@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Multi-Form</title>
+    <link rel="stylesheet" href="multi_form.css">
+</head>
+<body>
+     <div class="container">
+        <!-- Page one -->
+        <form id="F1">
+            <h3>CREATE ACCOUNT</h3>
+            <input type="text" placeholder="Email" required>
+            <input type="password" placeholder="Password" required>
+            <input type="password" placeholder="Confirm Password" required>
+
+            <div class="btn-box">
+                <button type="button" id="n1">Next</button>
+            </div>
+        </form>
+
+        <!-- Page Second -->
+        <form id="F2">
+            <h3>SOCIAL LINKS</h3>
+            <input type="text" placeholder="Medium">
+            <input type="text" placeholder="Github">
+            <input type="text" placeholder="Linkedin">
+
+            <div class="btn-box">
+                <button type="button" id="b1">Back</button>
+                <button type="button" id="n2">Next</button>
+            </div>
+        </form>
+
+        <!-- Page Third -->
+        <form id="F3">
+            <h3>PERSONAL INFO</h3>
+            <input type="text" placeholder="First Name" required>
+            <input type="text" placeholder="Last Name" required>
+            <input type="text" placeholder="Mobile No" required>
+
+            <div class="btn-box">
+                <button type="button" id="b2">Back</button>
+                <button type="submit" id="submit">Submit</button>
+            </div>
+        </form>
+
+        <div class="step-row">
+            <div id="progress"></div>
+            <div class="step-col"><small>Step 1</small></div>
+            <div class="step-col"><small>Step 2</small></div>
+            <div class="step-col"><small>Step 3</small></div>
+        </div>
+     </div>
+     
+     <div id="output"></div>
+
+    <script>
+        var form1 = document.querySelector("#F1");
+        var form2 = document.querySelector("#F2");
+        var form3 = document.querySelector("#F3");
+
+        var n1 = document.querySelector("#n1");
+        var n2 = document.querySelector("#n2");
+        var b1 = document.querySelector("#b1");
+        var b2 = document.querySelector("#b2");
+        var sub = document.querySelector("#submit")
+
+        var pro = document.querySelector("#progress");
+
+        n1.onclick = function(){
+            form1.style.left="-450px";
+            form2.style.left="40px";
+            pro.style.width ="240px" ;        
+        }
+
+        n2.onclick = function(){
+            form2.style.left="-450px";
+            form3.style.left="40px";
+            pro.style.width ="360px";
+        }
+
+        b1.onclick = function(){
+            form2.style.left="450px";
+            form1.style.left="40px";
+            pro.style.width ="120px";
+        }
+
+        b2.onclick = function(){
+            form3.style.left="450px";
+            form2.style.left="40px";
+            pro.style.width ="240px";
+        }
+
+        sub.onclick = function(){
+            event.preventDefault();
+            
+        }
+    </script>
+</body>
+</html>
